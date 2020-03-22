@@ -36,47 +36,73 @@ int main(int argc, char *argv[]){
     return 0;
 }
 
-/*EXTRACREDIT
+/*
+ EXTRACREDIT
 
-1)
-Assign the characters into numbers and then use printf to print them a character at a time. What kind of compiler warnings did you get?:
+ 1)
 
-	Run with Valgrind:
-	==1192== Memcheck, a memory error detector
-	==1192== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
-	==1192== Using Valgrind-3.9.0 and LibVEX; rerun with -h for copyright info
-	==1192== Command: ./ex9
-	==1192==
-	numbers: o s i r
-	==1192==
-	==1192== HEAP SUMMARY:
-	==1192==     in use at exit: 0 bytes in 0 blocks
-	==1192==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
-	==1192==
-	==1192== All heap blocks were freed -- no leaks are possible
-	==1192==
-	==1192== For counts of detected and suppressed errors, rerun with: -v
-	==1192== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1) 
+	 warning: more '%' conversions than data arguments [-Wformat]
+printf( " %s name[0]" );
+          ~^
+	 warning: more '%' conversions than data arguments [-Wformat]
+printf( " %s name[1]" );
+          ~^
+	 warning: more '%' conversions than data arguments [-Wformat]
+printf( " %s name[2]" );
+          ~^
+	 warning: more '%' conversions than data arguments [-Wformat]
+printf( " %s name[3]" );
+          ~^
+	 warning: more '%' conversions than data arguments
+      [-Wformat]
+printf( " %s name[4]" );
+
+output:
+ (null) name[0] (null) name[1] (null) name[2] (null) name[3] (null) name[4]numbers: 0 0 0 0
+name each: 1
+name: 1
+numbers: 1 2 3 4
+name each: Z e d
+name: Zed
+another: Zed
+another each: Z e d
+
 
  2)
- Do the inverse for name, trying to treat it like an array of int and print it out one int at a time. What does Valgrind think of that?:
+Output:
 
-	Run with Valgrind:
+numbers: 0 0 0 0
+name each: a
+name: a
+numbers: 1 2 3 4
+name each:
 
-	==1048== Memcheck, a memory error detector
-	==1048== Copyright (C) 2002-2013, and GNU GPL'd, by Isabel-eng
-	==1048== Using Valgrind-3.9.0 and LibVEX; rerun with -h for copyright info
-	==1048== Command: ./excercise9
-	==1048==
-	name each: 100 101 102 103
-	==1048==
-	==1048== HEAP SUMMARY:
-	==1048==     in use at exit: 0 bytes in 0 blocks
-	==1048==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
-	==1048==
-	==1048== All heap blocks were freed -- no leaks are possible
-	==1048==
-	==1048== For counts of detected and suppressed errors, rerun with: -v
-	==1048== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1) 
+name:
 
- 
+another: Zed
+another each: Z e d
+
+3)
+You can change the format of the array or print it using pointers
+
+4)
+I think is possible, but I don´t really understand how
+
+5)
+char name[6] = {'a'};
+name[0] = 'I';
+name[1] = 's';
+name[2] = 'a';
+name[3] = 'b';
+name[4] = 'e';
+name[5] = 'l';
+
+numbers: 0 0 0 0
+name each: I s a b
+name: Isabel
+numbers: 1 2 3 4
+name each: Z e d
+name: Zed
+another: Zed
+another each: Z e d
+*/
