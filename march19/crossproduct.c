@@ -2,13 +2,17 @@
 #include <stdio.h>
 int main(int argc, char ** argv) 
 {
-    int op = argc / 2, i, u=1;
-    if (argc%2 == 0) 
+    int op = argc / 2;
+    int i;
+    int u=1;
+    if (argc >=7) 
     {
         printf("be careful with your arguments\n");
     } else 
         {
-        float x[3], y[3], z[3];
+        float x[3];
+        float y[3];
+        float z[3];
         for (i = 0; i < op; i++) 
         {
             x[i] = atof(argv[i+u]);
